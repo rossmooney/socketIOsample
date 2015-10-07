@@ -17,14 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y8z-zM-Map">
-                                <rect key="frame" x="5" y="0.0" width="595" height="547"/>
-                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXH-9b-c5P">
-                                <rect key="frame" x="534" y="562" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXH-9b-c5P">
+                                <rect key="frame" x="528" y="270" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cp0-jy-zy2"/>
                                     <constraint firstAttribute="width" constant="46" id="y4T-Ft-GVZ"/>
@@ -34,23 +28,29 @@
                                     <action selector="send" destination="BYZ-38-t0r" eventType="touchUpInside" id="pj1-Sp-dg1"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1za-l7-BPI">
-                                <rect key="frame" x="28" y="562" width="459" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1za-l7-BPI">
+                                <rect key="frame" x="28" y="270" width="453" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="g7H-x4-oXE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y8z-zM-Map">
+                                <rect key="frame" x="5" y="20" width="595" height="235"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Y8z-zM-Map" secondAttribute="trailing" id="DLe-vt-JZU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Y8z-zM-Map" secondAttribute="bottom" id="GfK-sv-v4y"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hXH-9b-c5P" secondAttribute="bottom" constant="15" id="T49-wu-aV3"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1za-l7-BPI" secondAttribute="bottom" constant="8" id="Vgd-ue-YFZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hXH-9b-c5P" secondAttribute="bottom" constant="300" id="T49-wu-aV3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1za-l7-BPI" secondAttribute="bottom" constant="300" id="Vgd-ue-YFZ"/>
                             <constraint firstItem="hXH-9b-c5P" firstAttribute="top" secondItem="Y8z-zM-Map" secondAttribute="bottom" constant="15" id="XRy-pK-asR"/>
-                            <constraint firstItem="Y8z-zM-Map" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cZg-j9-F4p"/>
+                            <constraint firstItem="Y8z-zM-Map" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="cZg-j9-F4p"/>
                             <constraint firstItem="Y8z-zM-Map" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="fn6-vn-7OA"/>
                             <constraint firstItem="1za-l7-BPI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="28" id="o2b-UZ-oSd"/>
                             <constraint firstItem="hXH-9b-c5P" firstAttribute="leading" secondItem="1za-l7-BPI" secondAttribute="trailing" constant="47" id="rHm-Gx-YAR"/>

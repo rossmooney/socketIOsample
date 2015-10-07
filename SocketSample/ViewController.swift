@@ -15,32 +15,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var sendButton:UIButton!
     @IBOutlet weak var sendField:UITextField!
     
-    let socket = SocketIOClient(socketURL: "localhost:3000")
-    
+    let socket = SocketIOClient(socketURL: "10.0.0.8:8080", opts: ["log": true])
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        socketToMe()
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        addHandlers()
+        self.socket.connect()
     }
 
     @IBAction func send() {
-//        self.socket.emit("chat message", self.sendField.text!)
         self.socket.emit("chat message", withItems: [self.sendField.text!])
+        self.sendField.text = ""
+        self.sendField.resignFirstResponder()
     }
 
-    func socketToMe() {
-        socket.on("connect") {data, ack in
+    func addHandlers() {
+        self.socket.on("connect") {data, ack in
             print("socket connected")
-        }
-        
-        self.socket.on("") {data, ack in
-            self.socket.emitWithAck("", data)(timeoutAfter: 0) { _ in }
         }
         
         self.socket.on("chat message") { data, ack in
@@ -48,8 +40,6 @@ class ViewController: UIViewController {
                 self.chatView.text?.appendContentsOf(value + "\n")
             }
         }
-        
-        self.socket.connect()
     }
 }
 
