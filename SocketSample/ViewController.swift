@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var sendButton:UIButton!
     @IBOutlet weak var sendField:UITextField!
     
+    //Put your server's IP and port here
     let socket = SocketIOClient(socketURL: "10.0.0.8:8080", opts: ["log": true])
 
     override func viewDidLoad() {
@@ -35,9 +36,9 @@ class ViewController: UIViewController {
             print("socket connected")
         }
         
-        self.socket.on("chat message") { data, ack in
+        self.socket.on("chat message") { [weak self] data, ack in
             if let value = data.first as? String {
-                self.chatView.text?.appendContentsOf(value + "\n")
+                self?.chatView.text?.appendContentsOf(value + "\n")
             }
         }
     }
